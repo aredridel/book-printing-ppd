@@ -1,0 +1,530 @@
+*PPD-Adobe: "4.3"
+*FormatVersion: "4.3"
+*FileVersion: "1.1"
+*LanguageEncoding: ISOLatin1
+*LanguageVersion: English
+*PCFileName: "Book.ppd"
+*Manufacturer: "Generic"
+*Product: "Book Printing"
+*PSVersion: "(3018.101) 0"
+*ModelName: "Book Printing"
+*ShortNickName: "Book Printing"
+*NickName: "Book Printing"
+
+*SuggestedJobTimeout: "600"
+*SuggestedWaitTimeout: "0"
+*ADTrueGray: True
+*ColorDevice: True
+*DefaultColorSpace: CMYK
+*FileSystem: True
+*?FileSystem: "(True) == flush"
+*LanguageLevel: "3"
+*FreeVM: "4194304"
+*Throughput: "400"
+*VariablePaperSize: True
+
+*OpenUI *Resolution: PickOne
+*OrderDependency: 50 AnySetup *Resolution
+*DefaultResolution: 600dpi
+*Resolution 300dpi: "1 dict dup /HWResolution [300 300] put setpagedevice"
+*Resolution 600dpi: "1 dict dup /HWResolution [600 600] put setpagedevice"
+*Resolution 1200dpi: "1 dict dup /HWResolution [1200 1200] put setpagedevice"
+*Resolution 2400dpi: "1 dict dup /HWResolution [2400 2400] put setpagedevice"
+*?Resolution: "
+   save
+   currentpagedevice /HWResolution get
+   0 get
+   (          ) cvs print (dpi) = flush
+   restore"
+*End
+*CloseUI: *Resolution
+
+*ResScreenFreq 300dpi: "60.0"
+*ResScreenFreq 600dpi: "60.0"
+*ResScreenFreq 1200dpi: "60.0"
+*ResScreenFreq 2400dpi: "60.0"
+
+*ResScreenAngle 300dpi: "45.0"
+*ResScreenAngle 600dpi: "45.0"
+*ResScreenAngle 1200dpi: "45.0"
+*ResScreenAngle 2400dpi: "45.0"
+
+*% Halftone Information ===============
+*ContoneOnly: False
+*DefaultHalftoneType: 1
+*ScreenFreq: "60.0"
+*ScreenAngle: "45.0"
+*DefaultScreenProc: Dot
+*ScreenProc Dot: "{ abs exch abs 2 copy add 1 gt {1 sub dup mul exch 1 sub 
+dup mul add 1 sub} {dup mul exch dup mul add 1 exch sub}ifelse } bind"
+*End
+*ScreenProc Line: "{ exch pop abs neg } bind"
+*ScreenProc Ellipse: "{abs exch abs 2 copy 3 mul exch 4 mul add 3 sub dup 0
+lt { pop dup mul exch .75 div dup mul add 4 div 1 exch sub } { dup 1 gt{
+pop 1 exch sub dup mul exch 1 exch sub .75 div dup mul add 4 div 1 sub }
+{ .5 exch sub exch pop exch pop } ifelse  } ifelse } bind"
+*End
+*ScreenProc Cross: "{ abs exch abs 2 copy gt { exch } if pop neg } bind"
+
+
+*DefaultTransfer: Null
+*Transfer Null: "{ } bind"
+*Transfer Null.Inverse: "{ 1 exch sub } bind"
+
+*% Paper Handling ===================
+
+
+*% Code in this section both selects a tray and sets up a frame buffer.
+*OpenUI *PageSize: PickOne
+*OrderDependency: 50 AnySetup *PageSize
+*DefaultPageSize: Letter
+
+
+*PageSize 8.5x11: "
+  2 dict dup /PageSize [612 792] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize 8.5x9: "
+  2 dict dup /PageSize [612 648] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize 8.5x8.5: "
+  2 dict dup /PageSize [612 612] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize 8.268x11.693: "
+  2 dict dup /PageSize [595 842] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize 8.25x11: "
+  2 dict dup /PageSize [594 792] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize 8x10.88: "
+  2 dict dup /PageSize [576 783] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize 8x10: "
+  2 dict dup /PageSize [576 720] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize 8x8: "
+  2 dict dup /PageSize [576 576] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize 7x10: "
+  2 dict dup /PageSize [504 720] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize 7.5x9.25: "
+  2 dict dup /PageSize [540 666] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize 7.44x9.69: "
+  2 dict dup /PageSize [536 698] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize 6.69x9.61: "
+  2 dict dup /PageSize [482 692] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize 6.625x10.25: "
+  2 dict dup /PageSize [477 738] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize 6.14x9.21: "
+  2 dict dup /PageSize [442 663] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize 6x9: "
+  2 dict dup /PageSize [432 648] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize 5.83x8.27: "
+  2 dict dup /PageSize [420 595] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize 5.5x8.5: "
+  2 dict dup /PageSize [396 612] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize 5.25x8: "
+  2 dict dup /PageSize [378 576] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize 5.06x7.81: "
+  2 dict dup /PageSize [364 562] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize 5x7: "
+  2 dict dup /PageSize [360 504] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize 4.72x7.48: "
+  2 dict dup /PageSize [340 539] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageSize 4.37x7: "
+  2 dict dup /PageSize [315 504] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*?PageSize: " 
+ save 
+   currentpagedevice /PageSize get aload pop
+   2 copy gt {exch} if 
+   (Unknown) 
+   22 dict
+   dup [612 792] (8.5x11) put
+   dup [612 648] (8.5x9) put
+   dup [612 612] (8.5x8.5) put
+   dup [595 842] (8.268x11.693) put
+   dup [594 792] (8.25x11) put
+   dup [576 783] (8x10.88) put
+   dup [576 720] (8x10) put
+   dup [576 576] (8x8) put
+   dup [504 720] (7x10) put
+   dup [540 666] (7.5x9.25) put
+   dup [536 698] (7.44x9.69) put
+   dup [482 692] (6.69x9.61) put
+   dup [477 738] (6.625x10.25) put
+   dup [442 663] (6.14x9.21) put
+   dup [432 648] (6x9) put
+   dup [420 595] (5.83x8.27) put
+   dup [396 612] (5.5x8.5) put
+   dup [378 576] (5.25x8) put
+   dup [364 562] (5.06x7.81) put
+   dup [360 504] (5x7) put
+   dup [340 539] (4.72x7.48) put
+   dup [315 504] (4.37x7) put
+  { exch aload pop 4 index sub abs 5 le exch 
+    5 index sub abs 5 le and
+      { exch pop exit } { pop } ifelse
+   } bind forall 
+   = flush pop pop
+   restore
+"
+*End
+*CloseUI: *PageSize
+
+*OpenUI *PageRegion:  PickOne
+*OrderDependency: 50 AnySetup *PageRegion
+*DefaultPageRegion: Letter
+*CloseUI: *PageRegion
+*PageRegion 8.5x11: "
+  2 dict dup /PageRegion [612 792] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion 8.5x9: "
+  2 dict dup /PageRegion [612 648] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion 8.5x8.5: "
+  2 dict dup /PageRegion [612 612] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion 8.268x11.693: "
+  2 dict dup /PageRegion [595 842] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion 8.25x11: "
+  2 dict dup /PageRegion [594 792] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion 8x10.88: "
+  2 dict dup /PageRegion [576 783] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion 8x10: "
+  2 dict dup /PageRegion [576 720] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion 8x8: "
+  2 dict dup /PageRegion [576 576] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion 7x10: "
+  2 dict dup /PageRegion [504 720] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion 7.5x9.25: "
+  2 dict dup /PageRegion [540 666] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion 7.44x9.69: "
+  2 dict dup /PageRegion [536 698] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion 6.69x9.61: "
+  2 dict dup /PageRegion [482 692] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion 6.625x10.25: "
+  2 dict dup /PageRegion [477 738] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion 6.14x9.21: "
+  2 dict dup /PageRegion [442 663] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion 6x9: "
+  2 dict dup /PageRegion [432 648] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion 5.83x8.27: "
+  2 dict dup /PageRegion [420 595] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion 5.5x8.5: "
+  2 dict dup /PageRegion [396 612] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion 5.25x8: "
+  2 dict dup /PageRegion [378 576] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion 5.06x7.81: "
+  2 dict dup /PageRegion [364 562] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion 5x7: "
+  2 dict dup /PageRegion [360 504] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion 4.72x7.48: "
+  2 dict dup /PageRegion [340 539] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion 4.37x7: "
+  2 dict dup /PageRegion [315 504] put dup /ImagingBBox null put
+setpagedevice"
+*End
+
+
+*% The following entries provide information about specific paper keywords.
+*DefaultImageableArea: 6x9
+
+*ImageableArea 8.5x11: "0.0 0.0 612.0 792.0"0.0 0.0 "
+*ImageableArea 8.5x9: "0.0 0.0 612.0 648.0"0.0 0.0 "
+*ImageableArea 8.5x8.5: "0.0 0.0 612.0 612.0"0.0 0.0 "
+*ImageableArea 8.268x11.693: "0.0 0.0 595.0 842.0"0.0 0.0 "
+*ImageableArea 8.25x11: "0.0 0.0 594.0 792.0"0.0 0.0 "
+*ImageableArea 8x10.88: "0.0 0.0 576.0 783.0"0.0 0.0 "
+*ImageableArea 8x10: "0.0 0.0 576.0 720.0"0.0 0.0 "
+*ImageableArea 8x8: "0.0 0.0 576.0 576.0"0.0 0.0 "
+*ImageableArea 7x10: "0.0 0.0 504.0 720.0"0.0 0.0 "
+*ImageableArea 7.5x9.25: "0.0 0.0 540.0 666.0"0.0 0.0 "
+*ImageableArea 7.44x9.69: "0.0 0.0 536.0 698.0"0.0 0.0 "
+*ImageableArea 6.69x9.61: "0.0 0.0 482.0 692.0"0.0 0.0 "
+*ImageableArea 6.625x10.25: "0.0 0.0 477.0 738.0"0.0 0.0 "
+*ImageableArea 6.14x9.21: "0.0 0.0 442.0 663.0"0.0 0.0 "
+*ImageableArea 6x9: "0.0 0.0 432.0 648.0"0.0 0.0 "
+*ImageableArea 5.83x8.27: "0.0 0.0 420.0 595.0"0.0 0.0 "
+*ImageableArea 5.5x8.5: "0.0 0.0 396.0 612.0"0.0 0.0 "
+*ImageableArea 5.25x8: "0.0 0.0 378.0 576.0"0.0 0.0 "
+*ImageableArea 5.06x7.81: "0.0 0.0 364.0 562.0"0.0 0.0 "
+*ImageableArea 5x7: "0.0 0.0 360.0 504.0"0.0 0.0 "
+*ImageableArea 4.72x7.48: "0.0 0.0 340.0 539.0"0.0 0.0 "
+*ImageableArea 4.37x7: "0.0 0.0 315.0 504.0"0.0 0.0 "
+*?ImageableArea: "
+save
+  /cvp { (                ) cvs print ( ) print } bind def
+  /upperright {10000 mul floor 10000 div} bind def
+  /lowerleft {10000 mul ceiling 10000 div} bind def
+  newpath clippath pathbbox
+  4 -2 roll exch 2 {lowerleft cvp} repeat
+  exch 2 {upperright cvp} repeat flush
+ restore
+"
+*End
+
+*% These provide the physical dimensions of the paper (by keyword)
+*DefaultPaperDimension: 6x9
+*PaperDimension 8.5x11: "612 792"
+*PaperDimension 8.5x9: "612 648"
+*PaperDimension 8.5x8.5: "612 612"
+*PaperDimension 8.268x11.693: "595 842"
+*PaperDimension 8.25x11: "594 792"
+*PaperDimension 8x10.88: "576 783"
+*PaperDimension 8x10: "576 720"
+*PaperDimension 8x8: "576 576"
+*PaperDimension 7x10: "504 720"
+*PaperDimension 7.5x9.25: "540 666"
+*PaperDimension 7.44x9.69: "536 698"
+*PaperDimension 6.69x9.61: "482 692"
+*PaperDimension 6.625x10.25: "477 738"
+*PaperDimension 6.14x9.21: "442 663"
+*PaperDimension 6x9: "432 648"
+*PaperDimension 5.83x8.27: "420 595"
+*PaperDimension 5.5x8.5: "396 612"
+*PaperDimension 5.25x8: "378 576"
+*PaperDimension 5.06x7.81: "364 562"
+*PaperDimension 5x7: "360 504"
+*PaperDimension 4.72x7.48: "340 539"
+*PaperDimension 4.37x7: "315 504"
+
+*% Custom Page Sizes - 3 points to 25,000 inches for Distiller 8.0
+*CustomPageSize True: "
+   4 dict begin
+   3 1 roll
+   2 array astore /PageOffset exch def
+   2 mod 0 eq {exch} if
+   2 array astore /PageSize exch def
+   /ImagingBBox null def
+   currentdict end setpagedevice"
+*End
+*ParamCustomPageSize Width: 1 points 3 1800000
+*ParamCustomPageSize Height: 2 points 3 1800000
+*ParamCustomPageSize WidthOffset: 3 points 0 1800000
+*ParamCustomPageSize HeightOffset: 4 points 0 1800000
+*ParamCustomPageSize Orientation: 5 int 0 3
+*MaxMediaWidth: "1800000"
+*MaxMediaHeight: "1800000"
+*CenterRegistered: False
+*LeadingEdge Forced: ""
+*DefaultLeadingEdge: Forced
+
+*UseHWMargins True:""
+*UseHWMargins False:""
+*DefaultUseHWMargins: False 
+*HWMargins: 0 0 0 0
+
+*RequiresPageRegion All: True
+
+*OpenUI *InputSlot: PickOne
+*DefaultInputSlot: OnlyOne
+*InputSlot OnlyOne: ""
+*CloseUI: *InputSlot
+
+*AccurateScreensSupport: True
+
+*% Printer Messages (verbatim from printer):
+*Message: "%%[ exitserver: permanent state may be changed ]%%"
+*Message: "%%[ Flushing: rest of job (to end-of-file) will be ignored ]%%"
+*Message: "\FontName\ not found, using Courier"
+
+*% Status (format: %%[ status: <one of these> ] %%)
+
+*% Input Sources (format: %%[ status: <stat>; source: <one of these> ]%% )
+
+*% Printer Error (format: %%[ PrinterError: <one of these> ]%%)
+
+*% Color Separation Information =====================
+
+*DefaultColorSep: ProcessBlack.71lpi.600dpi/71 lpi / 600 dpi
+
+*%  For 60 lpi / 72 dpi  ===============================
+
+*ColorSepScreenAngle ProcessBlack.60lpi.72dpi/60 lpi / 72 dpi: "45"
+*ColorSepScreenAngle CustomColor.60lpi.72dpi/60 lpi / 72 dpi: "45"
+*ColorSepScreenAngle ProcessCyan.60lpi.72dpi/60 lpi / 72 dpi: "15"
+*ColorSepScreenAngle ProcessMagenta.60lpi.72dpi/60 lpi / 72 dpi: "75"
+*ColorSepScreenAngle ProcessYellow.60lpi.72dpi/60 lpi / 72 dpi: "0"
+
+*ColorSepScreenFreq ProcessBlack.60lpi.72dpi/60 lpi / 72 dpi: "60"
+*ColorSepScreenFreq CustomColor.60lpi.72dpi/60 lpi / 72 dpi: "60"
+*ColorSepScreenFreq ProcessCyan.60lpi.72dpi/60 lpi / 72 dpi: "60"
+*ColorSepScreenFreq ProcessMagenta.60lpi.72dpi/60 lpi / 72 dpi: "60"
+*ColorSepScreenFreq ProcessYellow.60lpi.72dpi/60 lpi / 72 dpi: "60"
+
+*%  For 60 lpi / 144 dpi  ===============================
+
+*ColorSepScreenAngle ProcessBlack.60lpi.144dpi/60 lpi / 144 dpi: "45"
+*ColorSepScreenAngle CustomColor.60lpi.144dpi/60 lpi / 144 dpi: "45"
+*ColorSepScreenAngle ProcessCyan.60lpi.144dpi/60 lpi / 144 dpi: "15"
+*ColorSepScreenAngle ProcessMagenta.60lpi.144dpi/60 lpi / 144 dpi: "75"
+*ColorSepScreenAngle ProcessYellow.60lpi.144dpi/60 lpi / 144 dpi: "0"
+
+*ColorSepScreenFreq ProcessBlack.60lpi.144dpi/60 lpi / 144 dpi: "60"
+*ColorSepScreenFreq CustomColor.60lpi.144dpi/60 lpi / 144 dpi: "60"
+*ColorSepScreenFreq ProcessCyan.60lpi.144dpi/60 lpi / 144 dpi: "60"
+*ColorSepScreenFreq ProcessMagenta.60lpi.144dpi/60 lpi / 144 dpi: "60"
+*ColorSepScreenFreq ProcessYellow.60lpi.144dpi/60 lpi / 144 dpi: "60"
+
+*%  For 60 lpi / 300 dpi  ===============================
+
+*ColorSepScreenAngle ProcessBlack.60lpi.300dpi/60 lpi / 300 dpi: "45"
+*ColorSepScreenAngle CustomColor.60lpi.300dpi/60 lpi / 300 dpi: "45"
+*ColorSepScreenAngle ProcessCyan.60lpi.300dpi/60 lpi / 300 dpi: "15"
+*ColorSepScreenAngle ProcessMagenta.60lpi.300dpi/60 lpi / 300 dpi: "75"
+*ColorSepScreenAngle ProcessYellow.60lpi.300dpi/60 lpi / 300 dpi: "0"
+
+*ColorSepScreenFreq ProcessBlack.60lpi.300dpi/60 lpi / 300 dpi: "60"
+*ColorSepScreenFreq CustomColor.60lpi.300dpi/60 lpi / 300 dpi: "60"
+*ColorSepScreenFreq ProcessCyan.60lpi.300dpi/60 lpi / 300 dpi: "60"
+*ColorSepScreenFreq ProcessMagenta.60lpi.300dpi/60 lpi / 300 dpi: "60"
+*ColorSepScreenFreq ProcessYellow.60lpi.300dpi/60 lpi / 300 dpi: "60"
+
+*%  For 71 lpi / 600 dpi  ===============================
+
+*ColorSepScreenAngle ProcessBlack.71lpi.600dpi/71 lpi / 600 dpi: "45.0"
+*ColorSepScreenAngle CustomColor.71lpi.600dpi/71 lpi / 600 dpi: "45.0"
+*ColorSepScreenAngle ProcessCyan.71lpi.600dpi/71 lpi / 600 dpi: "71.5651"
+*ColorSepScreenAngle ProcessMagenta.71lpi.600dpi/71 lpi / 600 dpi: "18.4349"
+*ColorSepScreenAngle ProcessYellow.71lpi.600dpi/71 lpi / 600 dpi: "0.0"
+*ColorSepScreenFreq ProcessBlack.71lpi.600dpi/71 lpi / 600 dpi: "70.7107"
+*ColorSepScreenFreq CustomColor.71lpi.600dpi/71 lpi / 600 dpi: "70.7107"
+*ColorSepScreenFreq ProcessCyan.71lpi.600dpi/71 lpi / 600 dpi: "63.2456"
+*ColorSepScreenFreq ProcessMagenta.71lpi.600dpi/71 lpi / 600 dpi: "63.2456"
+*ColorSepScreenFreq ProcessYellow.71lpi.600dpi/71 lpi / 600 dpi: "66.6667"
+
+*% For 100 lpi / 1200 dpi ==============================================
+
+*ColorSepScreenAngle ProcessBlack.100lpi.1200dpi/100 lpi / 1200 dpi: "45.0"
+*ColorSepScreenAngle CustomColor.100lpi.1200dpi/100 lpi / 1200 dpi: "45.0"
+*ColorSepScreenAngle ProcessCyan.100lpi.1200dpi/100 lpi / 1200 dpi: "15.0"
+*ColorSepScreenAngle ProcessMagenta.100lpi.1200dpi/100 lpi / 1200 dpi: "75.0"
+*ColorSepScreenAngle ProcessYellow.100lpi.1200dpi/100 lpi / 1200 dpi: "0.0"
+
+*ColorSepScreenFreq ProcessBlack.100lpi.1200dpi/100 lpi / 1200 dpi: "100.0"
+*ColorSepScreenFreq CustomColor.100lpi.1200dpi/100 lpi / 1200 dpi: "100.0"
+*ColorSepScreenFreq ProcessCyan.100lpi.1200dpi/100 lpi / 1200 dpi: "100.0"
+*ColorSepScreenFreq ProcessMagenta.100lpi.1200dpi/100 lpi / 1200 dpi: "100.0"
+*ColorSepScreenFreq ProcessYellow.100lpi.1200dpi/100 lpi / 1200 dpi: "100.0"
+
+*% For 175 lpi / 2400 dpi ==============================================
+
+*ColorSepScreenAngle ProcessBlack.175lpi.2400dpi/175 lpi / 2400 dpi: "45.0"
+*ColorSepScreenAngle CustomColor.175lpi.2400dpi/175 lpi / 2400 dpi: "45.0"
+*ColorSepScreenAngle ProcessCyan.175lpi.2400dpi/175 lpi / 2400 dpi: "15.0"
+*ColorSepScreenAngle ProcessMagenta.175lpi.2400dpi/175 lpi / 2400 dpi: "75.0"
+*ColorSepScreenAngle ProcessYellow.175lpi.2400dpi/175 lpi / 2400 dpi: "0.0"
+
+*ColorSepScreenFreq ProcessBlack.175lpi.2400dpi/175 lpi / 2400 dpi: "175.0"
+*ColorSepScreenFreq CustomColor.175lpi.2400dpi/175 lpi / 2400 dpi: "175.0"
+*ColorSepScreenFreq ProcessCyan.175lpi.2400dpi/175 lpi / 2400 dpi: "175.0"
+*ColorSepScreenFreq ProcessMagenta.175lpi.2400dpi/175 lpi / 2400 dpi: "175.0"
+*ColorSepScreenFreq ProcessYellow.175lpi.2400dpi/175 lpi / 2400 dpi: "175.0"
+
+*% For 200 lpi / 3600 dpi ==============================================
+
+*ColorSepScreenAngle ProcessBlack.200lpi.3600dpi/200 lpi / 3600 dpi: "45.0"
+*ColorSepScreenAngle CustomColor.200lpi.3600dpi/200 lpi / 3600 dpi: "45.0"
+*ColorSepScreenAngle ProcessCyan.200lpi.3600dpi/200 lpi / 3600 dpi: "15.0"
+*ColorSepScreenAngle ProcessMagenta.200lpi.3600dpi/200 lpi / 3600 dpi: "75.0"
+*ColorSepScreenAngle ProcessYellow.200lpi.3600dpi/200 lpi / 3600 dpi: "0.0"
+
+*ColorSepScreenFreq ProcessBlack.200lpi.3600dpi/200 lpi / 3600 dpi: "200.0"
+*ColorSepScreenFreq CustomColor.200lpi.3600dpi/200 lpi / 3600 dpi: "200.0"
+*ColorSepScreenFreq ProcessCyan.200lpi.3600dpi/200 lpi / 3600 dpi: "200.0"
+*ColorSepScreenFreq ProcessMagenta.200lpi.3600dpi/200 lpi / 3600 dpi: "200.0"
+*ColorSepScreenFreq ProcessYellow.200lpi.3600dpi/200 lpi / 3600 dpi: "200.0"
+
+*% For 200 lpi / 4000 dpi ==============================================
+
+*ColorSepScreenAngle ProcessBlack.200lpi.4000dpi/200 lpi / 4000 dpi: "45.0"
+*ColorSepScreenAngle CustomColor.200lpi.4000dpi/200 lpi / 4000 dpi: "45.0"
+*ColorSepScreenAngle ProcessCyan.200lpi.4000dpi/200 lpi / 4000 dpi: "15.0"
+*ColorSepScreenAngle ProcessMagenta.200lpi.4000dpi/200 lpi / 4000 dpi: "75.0"
+*ColorSepScreenAngle ProcessYellow.200lpi.4000dpi/200 lpi / 4000 dpi: "0.0"
+
+*ColorSepScreenFreq ProcessBlack.200lpi.4000dpi/200 lpi / 4000 dpi: "200.0"
+*ColorSepScreenFreq CustomColor.200lpi.4000dpi/200 lpi / 4000 dpi: "200.0"
+*ColorSepScreenFreq ProcessCyan.200lpi.4000dpi/200 lpi / 4000 dpi: "200.0"
+*ColorSepScreenFreq ProcessMagenta.200lpi.4000dpi/200 lpi / 4000 dpi: "200.0"
+*ColorSepScreenFreq ProcessYellow.200lpi.4000dpi/200 lpi / 4000 dpi: "200.0"
+
+
+*% GuaranteedMaxSeparations =======================================
+
+*DefaultGuaranteedMaxSeparations: 8
+*GuaranteedMaxSeparations 8: ""
